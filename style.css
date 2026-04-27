@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white-alpha-40: rgba(255, 255, 255, 0.40);
+  --white-alpha-25: rgba(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(5px);
+  --pink: #e84393;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.message {
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 20px;
+  background: var(--pink);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.message i {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  float: right;
+}
+a {
+  text-decoration: none;
+}
+
+.form-container {
+  background-image: url("img/pink-flowers-with-plant-branches-table.jpg");
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
+.form-container form {
+  width: 50vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  backdrop-filter: var(--backdrop-filter-blur);
+}
+ form input,
+ form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  outline: none;
+  border: none;
+  background: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
+
+form .btn {
+  cursor: pointer;
+  background: #545bba;
+  text-transform: uppercase;
+  color: #fff;
+}
+form .btn:hover {
+  background: transparent;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+}
+.form-container h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #545bba;
+  margin: 1rem  ;
+}
