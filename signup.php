@@ -1,5 +1,6 @@
 <?php
-include 'login.php';
+include 'db.php';
+
 
 $message = [];
 
@@ -14,7 +15,7 @@ if (isset($_POST['submit-btn'])) {
    $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
    $password = mysqli_real_escape_string($conn, $filter_password);
 
-   $filter_cpassword = filter_var($_POST['c_password'], FILTER_SANITIZE_STRING);
+   $filter_cpassword = filter_var($_POST['cpassword'], FILTER_SANITIZE_STRING);
    $cpassword = mysqli_real_escape_string($conn, $filter_cpassword);
 
    $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
@@ -61,8 +62,10 @@ if (isset($message)) {
   <h3>Sign Up</h3>
   <input type="text" name="name" placeholder="name" required>
   <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="password" placeholder="Password" required>
-  <input type="password" name="c_password" placeholder="Confirm Password" required>
+  <input type="password" name="password" placeholder="Password" required   minlength="8"
+  title="At least 8 characters, including uppercase, lowercase, number, and special character"
+>
+  <input type="password" name="cpassword" placeholder="Confirm Password" required>
   <input type="submit" name="submit-btn" class="btn" value="Sign Up">
   <p>Already have an account? <a href="login.php">Log in</a></p>
 </form>
