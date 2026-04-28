@@ -10,28 +10,9 @@ if (isset($_POST['logout'])) {
    header('location:login.php');
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>products</title>
-</head>
-<body>
   <?php include 'admin_header.php'; ?>
-  <?php
-if (isset($message)) {
-   foreach ($message as $msg) {
-      echo '<div class="message">
-      <span>'.$msg.'</span>
-      <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
-      </div>';
-   }}
+ <?php
+
    /* adding products to flowershop_db */
    if (isset($_POST['add_product'])) {
       $product_name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -57,10 +38,32 @@ if (isset($message)) {
          }
       }
    }
-
+if (isset($message)) {
+   foreach ($message as $msg) {
+      echo '<div class="message">
+      <span>'.$msg.'</span>
+      <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+      </div>';
+   }
+}
 
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>products</title>
+</head>
+<body>
+
+
   <section class="add-products">
 <form method="post" action="" enctype="multipart/form-data">
       <h1 class="title">add a new product</h1>
@@ -83,6 +86,6 @@ if (isset($message)) {
     <input type="submit" value="add product" name="add_product" class="btn">
   </form>
 </section>
-
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

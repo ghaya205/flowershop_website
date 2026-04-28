@@ -12,12 +12,13 @@
 }
 
 .message {
+  max-width: 50vw;
   text-align: center;
   margin: 2rem auto;
   font-size: 20px;
   background: var(--pink);
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 5px;
 }
 
@@ -31,6 +32,7 @@ a {
 }
 
 .form-container {
+  position: relative;
   background-image: url("img/pink-flowers-with-plant-branches-table.jpg");
   width: 100%;
   height: 100vh;
@@ -203,10 +205,10 @@ header {
 /*--admin products---*/
 .add-products {
   margin: 1rem;
-  background-image: url("img/flower2 (2).jpg");
+  background-image: url("img/pink-flowers-with-plant-branches-table.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-   padding: 1rem;
+  padding: 1rem;
 }
 .add-products form {
   width: 50vw;
