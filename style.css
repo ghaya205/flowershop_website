@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root {
-  --white-alpha-40: rgba(255, 255, 255, 0.40);
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
   --white-alpha-25: rgba(255, 255, 255, 0.25);
   --backdrop-filter-blur: blur(5px);
   --pink: #e84393;
@@ -48,8 +48,8 @@ a {
   border: 1px solid var(--white-alpha-40);
   backdrop-filter: var(--backdrop-filter-blur);
 }
- form input,
- form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 1rem;
   margin: 0.5rem 0;
@@ -77,5 +77,114 @@ form .btn:hover {
   text-align: center;
   text-transform: uppercase;
   color: #545bba;
-  margin: 1rem  ;
+  margin: 1rem;
+}
+
+/*--admin header---*/
+header {
+  background: fff;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  z-index: 1000;
+}
+.flex {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #aa4ff3;
+}
+.logo span {
+  color: #e382c5;
+}
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1rem;
+  color: #aa4ff3;
+  text-transform: uppercase;
+}
+
+.navbar a:hover,
+.header .icons i:hover {
+  color: #c7b3f5;
+}
+
+.header .icons i {
+  margin-left: 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aa4ff3;
+}
+.header .icons #menu-btn {
+  display: none;
+}
+.header .user-box {
+  position: absolute;
+  top: 150%;
+  right: -10%;
+  background: #fff;
+  width: 18rem;
+  padding: 0.7rem;
+  box-shadow: var(--box-shadow);
+  text-transform: capitalize;
+  color: #555;
+  font-size: 12px;
+  display: none;
+  transition: 0.5s;
+}
+.header .user-box.active {
+  display: block;
+}
+.header .user-box span {
+  text-transform: capitalize;
+  color: #aa4ff3;
+  font-size: 14px;
+}
+.logout-btn {
+  background: #c7b3f555;
+  width: 14rem;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+/*--media queries---*/
+@media (max-width: 768px) {
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.3s;
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  #menu-btn {
+    display: inline-block !important;
+    color: #aa4ff3;
+    font-size: 2rem;
+  }
+  .header .flex .navbar a {
+    display: block;
+    margin: 2rem;
+  }
 }

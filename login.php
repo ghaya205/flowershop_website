@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include 'connection.php';
 
 $message = [];
 
@@ -18,7 +18,7 @@ if (isset($_POST['submit-btn'])) {
 
       $row = mysqli_fetch_assoc($select_user);
 
-      // ⚠️ FIX: strings must be quoted + correct session usage + password check
+      
       if ($row['password'] === $password) {
 
          if ($row['user_type'] === 'admin') {
@@ -55,7 +55,8 @@ if (isset($_POST['submit-btn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="style.css">
   <title>Sign up</title>
 </head>
 <body>

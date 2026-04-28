@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'connection.php';
 
 
 $message = [];
@@ -40,7 +40,8 @@ if (isset($_POST['submit-btn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="style.css">
   <title>Sign up</title>
 </head>
 <body>
@@ -64,7 +65,7 @@ if (isset($message)) {
   <input type="email" name="email" placeholder="Email" required>
   <input type="password" name="password" placeholder="Password" required   minlength="8"
   title="At least 8 characters, including uppercase, lowercase, number, and special character"
->
+  >
   <input type="password" name="cpassword" placeholder="Confirm Password" required>
   <input type="submit" name="submit-btn" class="btn" value="Sign Up">
   <p>Already have an account? <a href="login.php">Log in</a></p>
