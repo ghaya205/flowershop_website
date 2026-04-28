@@ -116,7 +116,10 @@ header {
 .header .icons i:hover {
   color: #c7b3f5;
 }
-
+.header .icons{
+  display: flex;
+  align-items: center;
+}
 .header .icons i {
   margin-left: 1.2rem;
   font-size: 1.5rem;
