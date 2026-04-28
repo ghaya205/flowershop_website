@@ -60,9 +60,6 @@ if (isset($_POST['submit-btn'])) {
   <title>Sign up</title>
 </head>
 <body>
-
-<section class="form-container">
-
 <?php
 if (isset($message)) {
    foreach ($message as $msg) {
@@ -73,6 +70,9 @@ if (isset($message)) {
    }
 }
 ?>
+<section class="form-container">
+
+
 
 <form action="" method="POST">
   <h3>Log In</h3>

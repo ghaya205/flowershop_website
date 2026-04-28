@@ -10,6 +10,7 @@
   --pink: #e84393;
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
+
 .message {
   text-align: center;
   margin: 2rem auto;
@@ -82,7 +83,7 @@ form .btn:hover {
 
 /*--admin header---*/
 header {
-  background: fff;
+  background: #fff;
   width: 100%;
   padding: 1rem;
   box-shadow: var(--box-shadow);
@@ -116,7 +117,7 @@ header {
 .header .icons i:hover {
   color: #c7b3f5;
 }
-.header .icons{
+.header .icons {
   display: flex;
   align-items: center;
 }
@@ -164,20 +165,20 @@ header {
   margin-top: 1rem;
 }
 /*--admin dashboard---*/
-.title{
+.title {
   text-align: center;
   text-transform: uppercase;
   color: #545bba;
   margin: 2rem 0;
 }
-.box-container{
-padding: 2% 8%;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-justify-content: center;
-align-items: center;
+.box-container {
+  padding: 2% 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  justify-content: center;
+  align-items: center;
 }
-.box-container .box{
+.box-container .box {
   background: var(--white-alpha-25);
   padding: 1rem 0;
   border-radius: 15px;
@@ -187,19 +188,41 @@ align-items: center;
   text-align: center;
   box-shadow: var(--box-shadow);
   margin: 1rem;
-  text-align: center;}
-.box-container .box h3{
-  font-size: 3rem;
-  color:  #545bba;
+  text-align: center;
 }
-.box-container .box p{
+.box-container .box h3 {
+  font-size: 3rem;
+  color: #545bba;
+}
+.box-container .box p {
   font-size: 18px;
   text-transform: capitalize;
   margin: 1rem 0;
 }
 
-
-
+/*--admin products---*/
+.add-products {
+  margin: 1rem;
+  background-image: url("img/flower2 (2).jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+   padding: 1rem;
+}
+.add-products form {
+  width: 50vw;
+  margin: 1rem auto;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #fef0ea;
+}
+.add-products form label {
+  text-transform: capitalize;
+  color: var(--pink);
+}
+.add-products form textarea {
+  height: 200px;
+}
 /*--media queries---*/
 @media (max-width: 768px) {
   .header .navbar {
