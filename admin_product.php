@@ -18,10 +18,11 @@ if (isset($_POST['logout'])) {
       $product_name = mysqli_real_escape_string($conn, $_POST['name']);
       $product_price = mysqli_real_escape_string($conn, $_POST['price']);
       $product_detail = mysqli_real_escape_string($conn, $_POST['detail']);
-      $image = $_FILES['image']['name'];
       $image_size = $_FILES['image']['size'];
-      $image_tmp_name = $_FILES['image']['tmp_name'];
-      $image_folder = 'image/'.$image;
+     $image_tmp_name = $_FILES['image']['tmp_name'];
+     $image_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+     $image = uniqid() . '.' . $image_extension;
+     $image_folder = 'image/' . $image;
       $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$product_name'") or die('query failed');
       if (mysqli_num_rows($select_product_name) > 0) {
          $message[] = 'product name already exists!';
@@ -45,8 +46,8 @@ if (isset($_POST['logout'])) {
 /* update products */
 if (isset($_POST['update_product'])) {
     $update_id     = mysqli_real_escape_string($conn, $_POST['update_p_id']);
-    $update_name   = mysqli_real_escape_string($conn, $_POST['update_name']);
-    $update_price  = mysqli_real_escape_string($conn, $_POST['update_price']);
+    $update_name   = mysqli_real_escape_string($conn, $_POST['update_p_name']);
+    $update_price  = mysqli_real_escape_string($conn, $_POST['update_p_price']);
     $update_detail = mysqli_real_escape_string($conn, $_POST['update_p_detail']);
  
     
@@ -124,7 +125,6 @@ if (isset($message)) {
 </head>
 <body>
 
-
   <section class="add-products">
 <form method="post" action="" enctype="multipart/form-data">
       <h1 class="title">add a new product</h1>
@@ -189,14 +189,13 @@ if (isset($message)) {
         <input type="hidden" name="update_p_id" value="<?php echo $fetch_edit['id']; ?>">
  
         
-        <input type="text"   name="update_name"     value="<?php echo $fetch_edit['name']; ?>" required>
-        <input type="number" name="update_price" min="0" step="0.01" value="<?php echo $fetch_edit['price']; ?>" required>
+        <input type="text"   name="update_p_name"     value="<?php echo $fetch_edit['name']; ?>" required>
+        <input type="number" name="update_p_price" min="0" step="0.01" value="<?php echo $fetch_edit['price']; ?>" required>
         <textarea name="update_p_detail" required><?php echo $fetch_edit['product_detail']; ?></textarea>
         <input type="file"   name="update_p_image"  accept="image/jpg, image/jpeg, image/png, image/webp">
-        <small>Leave image blank to keep the current one.</small>
  
         <input type="submit" value="Update"  name="update_product" class="edit">
-        <a href="admin_product.php" class="option-btn btn">Cancel</a>
+        <input type="button" value="Cancel" class="option-btn btn" id="close-edit">
     </form>
     <?php
         }
