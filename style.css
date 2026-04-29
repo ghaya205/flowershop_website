@@ -203,7 +203,8 @@ header {
 }
 
 /*--admin products---*/
-.add-products {
+.add-products,
+.show-products {
   margin: 1rem;
   background-image: url("img/pink-flowers-with-plant-branches-table.jpg");
   background-size: cover;
@@ -224,6 +225,41 @@ header {
 }
 .add-products form textarea {
   height: 200px;
+}
+.show-products .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+.show-products .box-container .box {
+  background: #fff;
+}
+.edit,
+.delete {
+  margin: 0.5rem;
+  text-transform: capitalize;
+  color: #fff;
+  background: var(--pink);
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+}
+.edit:hover,
+.delete:hover {
+  background: transparent;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+}
+.show-products .box .details {
+  font-size: 14px;
+}
+.show-products .box img {
+  width: 80%;
+}
+.show-products .box h3 {
+  text-transform: capitalize;
+}
+.show-products .box p {
+  font-size: 14px;
+  color: #555;
 }
 /*--media queries---*/
 @media (max-width: 768px) {
