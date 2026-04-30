@@ -10,7 +10,7 @@ if (isset($_POST['logout'])) {
    header('location:login.php');
 }
 ?>
-  <?php include 'admin_header.php'; ?>
+  
  <?php
 
    /* adding products to flowershop_db */
@@ -101,15 +101,8 @@ if (isset($_GET['delete'])) {
    
 }
 
-/*  display messages  */
-if (isset($message)) {
-   foreach ($message as $msg) {
-      echo '<div class="message">
-      <span>'.$msg.'</span>
-      <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
-      </div>';
-   }
-}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,6 +117,18 @@ if (isset($message)) {
   <title>products</title>
 </head>
 <body>
+    <?php include 'admin_header.php'; ?>
+    <!-- display messages -->
+    <?php
+    if (isset($message)) {
+   foreach ($message as $msg) {
+      echo '<div class="message">
+      <span>'.$msg.'</span>
+      <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+      </div>';
+   }
+}
+    ?>
 
   <section class="add-products">
 <form method="post" action="" enctype="multipart/form-data">
@@ -184,7 +189,7 @@ if (isset($message)) {
             $fetch_edit = mysqli_fetch_assoc($edit_query);
     ?>
     <form method="post" action="" enctype="multipart/form-data">
-        <img src="image/<?php echo $fetch_edit['image']; ?>" alt="" style="max-width:150px;">
+        <img src="image/<?php echo $fetch_edit['image']; ?>" alt="" >
  
         <input type="hidden" name="update_p_id" value="<?php echo $fetch_edit['id']; ?>">
  
