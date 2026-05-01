@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2026 at 08:10 PM
+-- Generation Time: May 02, 2026 at 12:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,6 +51,15 @@ CREATE TABLE `message` (
   `number` int(30) NOT NULL,
   `message` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
+(6, 8, 'ghaya', 'ghayaghaya@gmail.com', 36521535, 'hi'),
+(7, 5, 'nour', 'nour@gmail.com', 11111111, 'salut'),
+(8, 6, 'emna', 'emna@gmail.com', 965656, 'hola');
 
 -- --------------------------------------------------------
 
@@ -128,7 +137,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (5, 'nour', 'nour@gmail.com', '123456789', 'user'),
 (6, 'emna', 'emna@gmail.com', '123456789', 'user'),
 (7, 'radhia', 'radhia@gmail.com', '123456789', 'user'),
-(8, 'red flower', 'red@gmail.com', '123456789', 'user');
+(9, 'ghaya', 'ghayaghaya@gmail.com', '123456789', 'user');
 
 -- --------------------------------------------------------
 
@@ -199,7 +208,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -217,7 +226,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
